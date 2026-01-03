@@ -69,8 +69,6 @@ pub struct CurrentResponse {
     pub dt: usize,
     pub sys: Sys,
     pub timezone: i64,
-    pub id: usize,
-    pub name: String,
     pub cod: usize,
 }
 
@@ -78,7 +76,7 @@ impl fmt::Display for CurrentResponse {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
-            "CurrentResponse: (Coord: {}, weather: {}, base: {}, main: {}, visibility: {}, wind: {}, clouds: {}, dt: {}, sys: {}, timezone: {}, id: {}, name: {}: cod: {})",
+            "CurrentResponse: (Coord: {}, weather: {}, base: {}, main: {}, visibility: {}, wind: {}, clouds: {}, dt: {}, sys: {}, timezone: {}, cod: {})",
             self.coord,
             self.weather[0],
             self.base,
@@ -89,8 +87,6 @@ impl fmt::Display for CurrentResponse {
             self.dt,
             self.sys,
             self.timezone,
-            self.id,
-            self.name,
             self.cod,
         )
     }
