@@ -60,7 +60,7 @@ impl fmt::Display for Main {
 #[derive(Debug, Serialize, Deserialize, PartialOrd, PartialEq, Default, Clone)]
 pub struct CurrentResponse {
     pub coord: Coord,
-    pub weather: Vec<Weather>,
+    pub weather: Weather,
     pub base: String,
     pub main: Main,
     pub visibility: usize,
@@ -78,7 +78,7 @@ impl fmt::Display for CurrentResponse {
             f,
             "CurrentResponse: (Coord: {}, weather: {}, base: {}, main: {}, visibility: {}, wind: {}, clouds: {}, dt: {}, sys: {}, timezone: {}, cod: {})",
             self.coord,
-            self.weather[0],
+            self.weather,
             self.base,
             self.main,
             self.visibility,
