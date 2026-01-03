@@ -3,7 +3,7 @@ use std::fmt;
 
 #[derive(Debug, Serialize, Deserialize, PartialOrd, PartialEq, Default, Clone)]
 pub struct Weather {
-    pub id: u64,
+    pub id: String,
     pub main: String,
     pub description: String,
     pub icon: String
