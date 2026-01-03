@@ -63,7 +63,7 @@ pub struct CurrentResponse {
     pub weather: Vec<Weather>,
     pub base: String,
     pub main: Main,
-    pub visibility: usize,
+    pub visibility: Option<usize>,
     pub wind: Wind,
     pub clouds: Clouds,
     pub dt: usize,
@@ -76,7 +76,7 @@ impl fmt::Display for CurrentResponse {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
-            "CurrentResponse: (Coord: {}, weather: {}, base: {}, main: {}, visibility: {}, wind: {}, clouds: {}, dt: {}, sys: {}, timezone: {}, cod: {})",
+            "CurrentResponse: (Coord: {}, weather: {}, base: {}, main: {}, visibility: {:?}, wind: {}, clouds: {}, dt: {}, sys: {}, timezone: {}, cod: {})",
             self.coord,
             self.weather[0],
             self.base,
