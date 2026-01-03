@@ -11,7 +11,6 @@ pub struct Sys {
     #[serde(rename = "type", default)]
     pub sys_type: Option<usize>,
     pub id: Option<usize>,
-    pub country: String,
     pub sunrise: usize,
     pub sunset: usize,
 }
@@ -20,10 +19,9 @@ impl fmt::Display for Sys {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
-            "System: (type: {:?}, id: {:?}, country: {}, sunrise: {}, sunset: {})",
+            "System: (type: {:?}, id: {:?}, sunrise: {}, sunset: {})",
             self.sys_type,
             self.id,
-            self.country,
             self.sunrise,
             self.sunset,
         )
